@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/fotosgram';
 }
 else {
-    urlDB = 'mongodb+srv://strider:JQQ6hWJE81FenvFg@cluster0-bhyt8.mongodb.net/test?retryWrites=true&w=majority';
+    urlDB = process.env.MONGO_DB;
 }
 // Conectar DB
 mongoose_1.default.connect(urlDB, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, (err) => {
